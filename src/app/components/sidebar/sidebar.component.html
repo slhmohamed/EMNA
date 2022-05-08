@@ -1,0 +1,33 @@
+<div class="logo">
+  <a href="https://www.creative-tim.com?ref=bda-sidebar-logo" class="simple-text logo-mini">
+    <div class="logo-img">
+      <img src="./assets/img/angular2-logo-white.png" />
+    </div>
+  </a>
+  <a href="https://www.creative-tim.com?ref=bda-sidebar-logo" class="simple-text logo-normal">
+    Rendez Vous
+  </a>
+</div>
+<div class="sidebar-wrapper">
+  <ul class="nav">
+    <li class="nav-item">
+      <a routerLink="/compte/dashboard">
+        <i class="tim-icons  icon-chart-pie-36"></i>
+        <p>Dashboard</p>
+      </a>
+    </li>
+    <li class="nav-item" *ngIf="role=='ADMIN'">
+      <a routerLink="/compte/user">
+        <i class="tim-icons  icon-bullet-list-67"></i>
+        <p>List utilisateurs</p>
+      </a>
+    </li>
+ 
+    <li class="nav-item" >
+      <a routerLink="/compte/maps">
+        <i class="tim-icons  icon-square-pin"></i>
+        <p>Rendez Vous</p>
+      </a>
+    </li>
+  </ul>
+</div>

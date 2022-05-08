@@ -1,0 +1,78 @@
+
+	<div class="main">  	
+		<input type="checkbox" id="chk" aria-hidden="true">
+
+			<div class="signup">
+				<form [formGroup]="registerForm" (ngSubmit)="onSubmitr()">
+					<label for="chk" aria-hidden="true">Créer nouveau compte</label>
+                    <input type="text" name="firstName" placeholder="Nom" formControlName="firstName"
+                    class="form-control" [ngClass]="{ 'is-invalid': submittedr && fr.firstName.errors }" />
+                <div *ngIf="submittedr && fr.firstName.errors" class="invalid-feedback">
+                    <div *ngIf="fr.firstName.errors.required" style="margin-top: -16px;text-align: left;margin-left: 53px;font-size: 12px;font-weight: bold;"
+                    > Ce champs est requis </div>
+
+                </div>
+                    <input type="text" name="lastName" placeholder="Prenom" formControlName="lastName"
+                    class="form-control" [ngClass]="{ 'is-invalid': submittedr && fr.lastName.errors }" />
+                <div *ngIf="submittedr && fr.lastName.errors" class="invalid-feedback">
+                    <div *ngIf="fr.lastName.errors.required" style="margin-top: -16px;text-align: left;margin-left: 53px;font-size: 12px;font-weight: bold;"
+                   > Ce champs est requis </div>
+
+                </div>
+					<input type="text" name="username" placeholder="Username" formControlName="username"
+                    class="form-control" [ngClass]="{ 'is-invalid': submittedr && fr.username.errors }" />
+                <div *ngIf="submittedr && fr.username.errors" class="invalid-feedback">
+                    <div *ngIf="fr.username.errors.required" style="margin-top: -16px;text-align: left;margin-left: 53px;font-size: 12px;font-weight: bold;"
+                    > Ce champs est requis </div>
+
+                </div>
+					<input type="email" name="email" placeholder="Email"formControlName="email"
+                    class="form-control" [ngClass]="{ 'is-invalid': submittedr && fr.email.errors }" />
+                <div *ngIf="submittedr && fr.email.errors" class="invalid-feedback">
+                    <div *ngIf="fr.email.errors.required" style="margin-top: -16px;text-align: left;margin-left: 53px;font-size: 12px;font-weight: bold;"
+                    > Ce champs est requis </div>
+                    <div *ngIf="fr.email.errors.email" style="margin-top: -16px;text-align: left;margin-left: 53px;font-size: 12px;font-weight: bold;"
+                    >
+                        Invalid email</div>
+
+                </div>
+					<input type="password" name="password" placeholder="Mot de passe" formControlName="password"
+                    class="form-control" [ngClass]="{ 'is-invalid': submittedr && fr.password.errors }" />
+                <div *ngIf="submittedr && fr.password.errors" class="invalid-feedback">
+                    <div *ngIf="fr.password.errors.required" style="margin-top: -16px; text-align: left;margin-left: 53px;font-size: 12px;font-weight: bold;"
+                     > Ce champs est requis</div>
+
+                </div>
+                    <input type="text" name="phone" placeholder="Numero de Tel"formControlName="phone"
+                    class="form-control" [ngClass]="{ 'is-invalid': submittedr && fr.phone.errors }" />
+                <div *ngIf="submittedr && fr.phone.errors" class="invalid-feedback">
+                    <div *ngIf="fr.phone.errors.required" style=" margin-top: -16px;text-align: left;margin-left: 53px;font-size: 12px;font-weight: bold;"
+                    > Ce champs est requis </div>
+
+                </div>
+
+					<button type="submit">S’inscrire  </button>
+				</form>
+			</div>
+
+			<div class="login">
+				<form [formGroup]="loginForm" (ngSubmit)="onSubmitl()">
+					<label for="chk" aria-hidden="true">Se connecter</label>
+					<input type="text" name="usename" placeholder="Username"formControlName="username"
+                    class="form-control" [ngClass]="{ 'is-invalid': submittedl && fl.username.errors }" />
+                <div *ngIf="submittedl && fl.username.errors" class="invalid-feedback">
+                    <div *ngIf="fl.username.errors.required" style="margin-top: -16px;text-align: left;margin-left: 53px;font-size: 12px;font-weight: bold;"
+                   >Ce champs est requis </div>
+
+                </div>
+					<input type="password" name="pswd" placeholder="Mot de passe" formControlName="password"
+                    class="form-control" [ngClass]="{ 'is-invalid': submittedl && fl.password.errors }" />
+                <div *ngIf="submittedl && fl.password.errors" class="invalid-feedback">
+                    <div *ngIf="fl.password.errors.required" style="margin-top: -16px;text-align: left;margin-left: 53px;font-size: 12px;font-weight: bold;"
+                    > Ce champs est requis </div>
+
+                </div>
+					<button type="submit">Se connecter</button>
+				</form>
+			</div>
+	</div>
